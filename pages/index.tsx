@@ -231,9 +231,10 @@ export default function Home() {
                                
                             </h1>
                             <h3 style={{ maxWidth: '600px' }}>
-                                Derpfi is redefining passive asset management. We're a community-governed project
-                                offering full exposure to crypto risk-management and the DeFi ecosystem through
-                                passively managed, non-custodial funds and indices.
+                            Derpfi is redefining passive asset management. We're a community-governed project
+                            offering full exposure to crypto risk-management and the DeFi ecosystem through
+                            passively managed, non-custodial funds and indices.
+                            
                             </h3>
                             <div style={{ margin: '30px 0px' }}>
                                 <a href="#">
@@ -350,10 +351,11 @@ export default function Home() {
                                 </h1>
                             </BoxHeader>
                             <p style={{ maxWidth: '600px' }}>
-                                Derpfi is tearing down traditional financial definitions surrounding funds and indices
-                                through our innovative Derpfis. We're building a protocol that enables users to
-                                passively maintain risk-optimal portfolios while still gaining the benefits and returns
-                                of active DeFi protocol participation.
+                            Derpfi is tearing down traditional financial definitions surrounding funds and indices
+                            through our innovative Derpfis. We&apos;re building a protocol that enables users to
+                            passively maintain risk-optimal portfolios while still gaining the benefits and returns
+                            of active DeFi protocol participation.
+                            
                             </p>
                         </div>
                     </LandingCol>
