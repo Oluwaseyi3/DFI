@@ -91,58 +91,58 @@ const BoxMain = styled.img`
     }
 `;
 const CHAINID = 137
-const getApy = async (
-  pid: string,
-  setApy: React.Dispatch<React.SetStateAction<string>>,
-  minter: any | undefined,
-  bundleToken: Contract | undefined,
-  stakeToken: Contract | undefined,
-  token0: string | undefined,
-  token1: string | undefined
-) => {; 50
-  try {
-      if (!!minter && !!bundleToken && !!stakeToken) {
-          const minterAddress = getNamedAddress(CHAINID, 'Minter');
+// const getApy = async (
+//   pid: string,
+//   setApy: React.Dispatch<React.SetStateAction<string>>,
+//   minter: any | undefined,
+//   bundleToken: Contract | undefined,
+//   stakeToken: Contract | undefined,
+//   token0: string | undefined,
+//   token1: string | undefined
+// ) => {; 50
+//   try {
+//       if (!!minter && !!bundleToken && !!stakeToken) {
+//           const minterAddress = getNamedAddress(CHAINID, 'Minter');
 
-          const batch = [];
-          batch.push(minter.poolInfo(pid));
-          batch.push(minter.totalAllocPoint());
+//           const batch = [];
+//           batch.push(minter.poolInfo(pid));
+//           batch.push(minter.totalAllocPoint());
           // batch.push(getAsset(bundleToken.address, bundleToken.provider));
           // batch.push(getAsset(token0, bundleToken.provider));
           // batch.push(getAsset(token1, bundleToken.provider));
-          batch.push(stakeToken.totalSupply());
-          batch.push(stakeToken.getReserves());
+//           batch.push(stakeToken.totalSupply());
+//           batch.push(stakeToken.getReserves());
 
-          const batchResult = await Promise.all(batch).then((values) => values);
+//           const batchResult = await Promise.all(batch).then((values) => values);
 
-          const pInfo = batchResult[0];
-          const totalAllocPoint = batchResult[1];
-          const bundleAsset = batchResult[2];
-          const token0Asset = batchResult[3];
-          const token1Asset = batchResult[4];
-          const stakeTokenSupply = batchResult[5];
-          const token0Supply = batchResult[6][0];
-          const token1Supply = batchResult[6][1];
+//           const pInfo = batchResult[0];
+//           const totalAllocPoint = batchResult[1];
+//           const bundleAsset = batchResult[2];
+//           const token0Asset = batchResult[3];
+//           const token1Asset = batchResult[4];
+//           const stakeTokenSupply = batchResult[5];
+//           const token0Supply = batchResult[6][0];
+//           const token1Supply = batchResult[6][1];
 
-          const stakeTokenPrice = token0Supply
-              .mul(token0Asset.price)
-              .add(token1Supply.mul(token1Asset.price))
-              .mul(parseEther('1'))
-              .div(stakeTokenSupply);
+//           const stakeTokenPrice = token0Supply
+//               .mul(token0Asset.price)
+//               .add(token1Supply.mul(token1Asset.price))
+//               .mul(parseEther('1'))
+//               .div(stakeTokenSupply);
 
-          const staked = (await stakeToken.balanceOf(minterAddress)).mul(stakeTokenPrice).div(parseEther('1'));
-          const rewardsPerDay = (await minter.blockRewards()).mul(bundleAsset.price).mul(28800);
+//           const staked = (await stakeToken.balanceOf(minterAddress)).mul(stakeTokenPrice).div(parseEther('1'));
+//           const rewardsPerDay = (await minter.blockRewards()).mul(bundleAsset.price).mul(28800);
 
-          const stakedFormatted = parseFloat(formatUnits(staked));
-          const rewardsFormatted = parseFloat(formatUnits(rewardsPerDay));
+//           const stakedFormatted = parseFloat(formatUnits(staked));
+//           const rewardsFormatted = parseFloat(formatUnits(rewardsPerDay));
 
-          const dpr = ((rewardsFormatted / stakedFormatted) * pInfo.allocPoint) / totalAllocPoint;
-          const apy = (1 + dpr) ** 365 - 1;
+//           const dpr = ((rewardsFormatted / stakedFormatted) * pInfo.allocPoint) / totalAllocPoint;
+//           const apy = (1 + dpr) ** 365 - 1;
 
-          setApy(`${formatNumber(apy * 100)}%`);
-      }
-  } catch (e) {}
-};
+//           setApy(`${formatNumber(apy * 100)}%`);
+//       }
+//   } catch (e) {}
+// };
 
 
 // const stakeToken = useContract('0xe3b698b149634a09B806BC9Ec438111a3d3E833A', PairABI, false); //PancakeSwap V2 pool to exchange between BDL and WBNB.
