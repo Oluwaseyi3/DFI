@@ -137,7 +137,7 @@ const Navbar: React.FC = (): React.ReactElement => {
                             <Menu.ItemGroup title="Bundle">
                                 <Menu.Item key="bdl">
                                     <Link href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x7ff78e1cab9a2710eb6486ecbf3d94d125039364">
-                                      Buy BDL
+                                      Buy DFI
                                     </Link>
                                 </Menu.Item>
                             </Menu.ItemGroup>
@@ -157,9 +157,9 @@ const Navbar: React.FC = (): React.ReactElement => {
                                 </Menu.Item>
                             </Menu.ItemGroup>
                             <Menu.ItemGroup title="Wallet">
-                                {/* <Menu.Item key="wallet">
-                                    <Account triedToEagerConnect={triedToEagerConnect} />
-                                </Menu.Item> */}
+                                <Menu.Item key="wallet">
+                                    <Account/>
+                                </Menu.Item> 
                             </Menu.ItemGroup>
                         </SubMenu>
                     </Menu>
