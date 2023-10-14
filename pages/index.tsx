@@ -16,7 +16,7 @@ import { Contract } from '@ethersproject/contracts';
 import Link from 'next/link';
 import PairABI from '../contracts/Pair.json';
 import { formatUnits, parseEther } from '@ethersproject/units';
-import { getAsset } from '../lib/asset';
+// import { getAsset } from '../lib/asset';
 
 const inter = Inter({ subsets: ['latin'] })
 interface RowContainerProps {
@@ -107,9 +107,9 @@ const getApy = async (
           const batch = [];
           batch.push(minter.poolInfo(pid));
           batch.push(minter.totalAllocPoint());
-          batch.push(getAsset(bundleToken.address, bundleToken.provider));
-          batch.push(getAsset(token0, bundleToken.provider));
-          batch.push(getAsset(token1, bundleToken.provider));
+          // batch.push(getAsset(bundleToken.address, bundleToken.provider));
+          // batch.push(getAsset(token0, bundleToken.provider));
+          // batch.push(getAsset(token1, bundleToken.provider));
           batch.push(stakeToken.totalSupply());
           batch.push(stakeToken.getReserves());
 

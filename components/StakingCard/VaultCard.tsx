@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { formatNumber, getNamedAddress, parseBalance } from '../../util';
 import BundleTokenABI from '../../contracts/BundleToken.json';
 import VaultABI from '../../contracts/Vault.json';
-import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
+import { DownOutlined, UpOutlined } from '@ant-design/icons';
 import { Col, Row, InputNumber } from 'antd';
 import OutlinedButton from '../Button/Outline';
 import { fetchPrice } from '../../lib/coingecko';
@@ -14,7 +14,7 @@ import { Contract } from '@ethersproject/contracts';
 import { BigNumber } from '@ethersproject/bignumber'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { approveMessage, depositMessage, errorMessage, txMessage, withdrawMessage } from '../Messages';
+import { approveMessage, depositMessage, txMessage, withdrawMessage } from '../Messages';
 import { prepareWriteContract, waitForTransaction, writeContract } from '@wagmi/core';
 import { useAccount } from 'wagmi'
 import { useContractRead } from 'wagmi'
@@ -387,9 +387,9 @@ const secNumberValue = BigNumber.from(dfiBalance?.toString() ?? '0'); // Convert
                 </InfoBlock>
                 <InfoBlock xs={1} sm={1} md={1} lg={1}>
                     {expanded ? (
-                        <CaretUpOutlined style={{ marginBottom: '3px' }} />
+                        <UpOutlined style={{ marginBottom: '3px' }} />
                     ) : (
-                        <CaretDownOutlined style={{ marginBottom: '3px' }} />
+                        <DownOutlined style={{ marginBottom: '3px' }} />
                     )}
                 </InfoBlock>
             </VaultInfoRow>
