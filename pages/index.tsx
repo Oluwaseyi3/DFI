@@ -217,9 +217,11 @@ export default function Home() {
                     <LandingCol xs={24} sm={24} md={12}>
                         <div>
                             <h1 style={{ position: 'relative' }}>
-                                <img
+                                <Image
                                     src="/assets/derpfi.png"
-                                    width="275px"
+                                    width={275}
+                                    height={275}
+                                    alt=""
                                     style={{
                                         position: 'absolute',
                                         bottom: '-15px',
@@ -231,9 +233,8 @@ export default function Home() {
                                
                             </h1>
                             <h3 style={{ maxWidth: '600px' }}>
-                            Derpfi is redefining passive asset management. We're a community-governed project
-                            offering full exposure to crypto risk-management and the DeFi ecosystem through
-                            passively managed, non-custodial funds and indices.
+                            Derpfi is redefining passive asset management. We&apos;re a community-governed project offering full exposure to crypto risk-management and the DeFi ecosystem through passively managed, non-custodial funds and indices.
+
                             
                             </h3>
                             <div style={{ margin: '30px 0px' }}>
@@ -351,10 +352,8 @@ export default function Home() {
                                 </h1>
                             </BoxHeader>
                             <p style={{ maxWidth: '600px' }}>
-                            Derpfi is tearing down traditional financial definitions surrounding funds and indices
-                            through our innovative Derpfis. We&apos;re building a protocol that enables users to
-                            passively maintain risk-optimal portfolios while still gaining the benefits and returns
-                            of active DeFi protocol participation.
+                            Derpfi is tearing down traditional financial definitions surrounding funds and indices through our innovative Derpfis. We&apos;re building a protocol that enables users to passively maintain risk-optimal portfolios while still gaining the benefits and returns of active DeFi protocol participation.
+
                             
                             </p>
                         </div>

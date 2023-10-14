@@ -1,6 +1,7 @@
-import { Col, Image, Row, Menu, Layout } from 'antd';
+import { Col, Row, Menu, Layout } from 'antd';
 import styled from 'styled-components';
 import React from 'react';
+import Image from 'next/image'
 
 interface Props {
     image: string;
@@ -89,11 +90,12 @@ const RewardCard: React.FC<Props> = (props: Props): React.ReactElement => {
             <InternalCard>
                 <div style={{ display: 'flex' }}>
                     <ImageContainer>
-                        <img src={props.image} width="50px" height="50px" style={props.imgStyle} />
+                        <Image src={props.image} width={50}  height={50} style={props.imgStyle} alt="" />
                     </ImageContainer>
                     {props.imageSecondary ? (
                         <ImageContainer style={{ position: 'relative', right: '20px', zIndex: 1 }}>
-                            <img src={props.imageSecondary} height="50px" width="50px" />
+                              <Image src={props.imageSecondary} width={50}  height={50} style={props.imgStyle} alt="" />
+                        
                         </ImageContainer>
                     ) : (
                         <></>

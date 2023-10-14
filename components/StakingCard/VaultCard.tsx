@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { formatNumber, getNamedAddress, parseBalance } from '../../util';
 import BundleTokenABI from '../../contracts/BundleToken.json';
 import VaultABI from '../../contracts/Vault.json';
+import Image from 'next/image'
 import { DownOutlined, UpOutlined } from '@ant-design/icons';
 import { Col, Row, InputNumber } from 'antd';
 import OutlinedButton from '../Button/Outline';
@@ -24,7 +25,7 @@ import { TransactionReceipt, TransactionResponse } from '@ethersproject/abstract
 import { ethers } from 'ethers';
 
 interface Props {
-    image?: string;
+    image?: any;
     name?: string;
     imageStyle?: React.CSSProperties;
     pid?: string;
@@ -367,7 +368,7 @@ const secNumberValue = BigNumber.from(dfiBalance?.toString() ?? '0'); // Convert
             <VaultInfoRow onClick={() => setExpanded(!expanded)} align="middle" gutter={[0, 10]}>
                 <InfoBlock xs={24} sm={24} md={24} lg={5} style={{ flexGrow: 1 }}>
                     <ImageContainer style={{ marginLeft: '20px' }}>
-                        <img src={props.image} width="55px" height="55px" style={props.imageStyle} />
+                        <Image width={55} height={55} style={props.imageStyle} alt="" src={props.image}/>
                     </ImageContainer>
                     <TextBold style={{ marginLeft: '20px' }}>{props.name}</TextBold>
                 </InfoBlock>
