@@ -343,7 +343,7 @@ const formattedBalance = parseBalance(balanceInWei);
         if (!props.disabled) {
             getApr(setApr);
         }
-    }, []);
+    }, [props.disabled]);
 
     console.log(approved)
    

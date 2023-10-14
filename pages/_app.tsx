@@ -1,12 +1,14 @@
 import styles from '@/styles/global.module.css'
 import { Layout } from 'antd';
-import type { AppProps } from 'next/app'
+import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import Navbar from '../components/Navbar';
 import { WagmiConfig, createConfig, configureChains, mainnet } from 'wagmi'
 import { publicProvider } from 'wagmi/providers/public'
 import { polygon } from 'wagmi/chains'
 import Footer from '@/components/Footer';
+import Head from 'next/head'
+
 
 const theme = {
   maxWidth: '1500px',
@@ -32,13 +34,13 @@ const config = createConfig({
 export default function App({ Component, pageProps }: AppProps) {
   return  (
     <WagmiConfig config={config}>
-      \
+    
   <ThemeProvider theme={theme}>
   <Layout style={{ minHeight: '100vh', overflow: 'hidden' }}>
-      <head>
+      <Head>
           <title>Derpfi</title>
-          <link rel="icon" href="/favicon.ico" />
-      </head>
+          <link rel="icon" href="/favicon.ico"/>
+      </Head>
 
       <Navbar />
       <Component {...pageProps} />
