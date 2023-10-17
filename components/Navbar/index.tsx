@@ -8,8 +8,6 @@ import { useRouter } from 'next/router';
 import SubMenu from 'antd/lib/menu/SubMenu';
 import { MenuOutlined } from '@ant-design/icons';
 // import OutlineButton from '../Button/Outline';
-
-
 const Nav = styled(Layout.Header)`
     width: 100vw;
     height: 66px;
@@ -94,16 +92,15 @@ const NavMenuCol = styled(Col)`
     }
 `;
 
+
 const Navbar: React.FC = (): React.ReactElement => {
     const router = useRouter();
   
 
-    // const triedToEagerConnect = useEagerConnect();
-
     const activeStyle = {
         borderBottom: '2px solid #E7694C',
         padding: '5px 0px 1px 0px',
-    };
+    }
 
     return (
         <Nav>
@@ -126,10 +123,10 @@ const Navbar: React.FC = (): React.ReactElement => {
                             Staking
                         </Link>
                     </NavMenuItem>
-                     <NavMenuItem>
-                        <Account />
+                    <NavMenuItem>
+                        <Account  />
                     </NavMenuItem>
-                    
+                   
                 </MenuCol>
                 <NavMenuCol xs={14} sm={14} md={0} style={{ height: '100%' }}>
                     <Menu mode="horizontal" triggerSubMenuAction="click">
@@ -137,7 +134,7 @@ const Navbar: React.FC = (): React.ReactElement => {
                             <Menu.ItemGroup title="Bundle">
                                 <Menu.Item key="bdl">
                                     <Link href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x7ff78e1cab9a2710eb6486ecbf3d94d125039364">
-                                      Buy DFI
+                                      Buy BDL
                                     </Link>
                                 </Menu.Item>
                             </Menu.ItemGroup>
@@ -158,8 +155,8 @@ const Navbar: React.FC = (): React.ReactElement => {
                             </Menu.ItemGroup>
                             <Menu.ItemGroup title="Wallet">
                                 <Menu.Item key="wallet">
-                                    <Account/>
-                                </Menu.Item> 
+                                    <Account  />
+                                </Menu.Item>
                             </Menu.ItemGroup>
                         </SubMenu>
                     </Menu>

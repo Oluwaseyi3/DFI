@@ -49,8 +49,13 @@ h2 {
 }
 
 h1 {
-    font-size: 45px;
+    font-size: 55px;
     margin-bottom: 0px;
+}
+
+p{
+    font-size: 20px;
+    padding: 1px; 
 }
 
 h3,
@@ -58,7 +63,8 @@ h4,
 h5,
 h6,
 a {
-    font-family: 'Visuelt';
+    /* font-family: 'Visuelt'; */
+    font-size: 20px;
 }
 
 img {
@@ -66,5 +72,5 @@ img {
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
-    user-drag: none;
+ 
 }
