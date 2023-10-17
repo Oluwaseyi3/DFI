@@ -99,7 +99,7 @@ const Landing: React.FC = (): React.ReactElement => {
                 return 0;
             }
         })
-        .map((asset, index) => <AssetCard asset={asset} nav={nav} index={index} />);
+        .map((asset, index) => <AssetCard asset={asset} nav={nav} index={index} key={index}/>);
 
         return (
             <Layout.Content>
