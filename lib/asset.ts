@@ -61,37 +61,37 @@ export interface LiquidityInfo {
     [key: string]: {};
 }
 
-// export const getAsset = async (
-//     address: string | undefined,
-//     provider: any,
-//     setAsset?: any,
-//     loadCap?: boolean
-// ): Promise<Asset> => {
-//     if (!address || !provider) return { symbol: '', address: '' };
+export const getAsset = async (
+    address: string | undefined,
+    provider: any,
+    setAsset?: any,
+    loadCap?: boolean
+): Promise<Asset> => {
+    if (!address || !provider) return { symbol: '', address: '' };
 
-//     const token = new Contract(address, ERC20, provider);
-//     const router = new Contract(ROUTER, PancakeRouter, provider);
-//     const symbol = await token!.symbol();
-//     const price =
-//         symbol == 'BUSD'
-//             ? parseEther('1')
-//             : (await router!.getAmountsOut(parseEther('1'), [address, ...SWAP_PATHS[symbol]]))[
-//                   SWAP_PATHS[symbol].length
-//               ]
-//                   .mul(10000)
-//                   .div(9975);
-//     const asset: Asset = { symbol, price, address };
+    const token = new Contract(address, ERC20, provider);
+    const router = new Contract(ROUTER, PancakeRouter, provider);
+    const symbol = await token!.symbol();
+    const price =
+        symbol == 'BUSD'
+            ? parseEther('1')
+            : (await router!.getAmountsOut(parseEther('1'), [address, ...SWAP_PATHS[symbol]]))[
+                  SWAP_PATHS[symbol].length
+              ]
+                  .mul(10000)
+                  .div(9975);
+    const asset: Asset = { symbol, price, address };
 
-//     if (loadCap) {
-//         asset.cap = await token!.totalSupply();
-//     }
+    if (loadCap) {
+        asset.cap = await token!.totalSupply();
+    }
 
-//     if (setAsset) {
-//         setAsset(asset);
-//     }
+    if (setAsset) {
+        setAsset(asset);
+    }
 
-//     return asset;
-// };
+    return asset;
+};
 
 // export const getPrice = async (route: string[]): Promise<BigNumber> => {
 //     const router = useContract(ROUTER, PancakeRouter);

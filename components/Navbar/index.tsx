@@ -3,11 +3,12 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import React from 'react';
 import Account from '../Account';
-// import useEagerConnect from '../../hooks/useEagerConnect';
+
 import { useRouter } from 'next/router';
 import SubMenu from 'antd/lib/menu/SubMenu';
 import { MenuOutlined } from '@ant-design/icons';
-// import OutlineButton from '../Button/Outline';
+import OutlineButton from '../Button/Outline';
+
 const Nav = styled(Layout.Header)`
     width: 100vw;
     height: 66px;
@@ -92,15 +93,15 @@ const NavMenuCol = styled(Col)`
     }
 `;
 
-
 const Navbar: React.FC = (): React.ReactElement => {
     const router = useRouter();
-  
+    console.log(router.pathname);
+
 
     const activeStyle = {
         borderBottom: '2px solid #E7694C',
         padding: '5px 0px 1px 0px',
-    }
+    };
 
     return (
         <Nav>
@@ -108,14 +109,14 @@ const Navbar: React.FC = (): React.ReactElement => {
                 <Col xs={10} sm={10} md={4} style={{ height: '100%' }}>
                     <Link href="/">
                        
-                            <Logo height="55px" width="55px" src="../assets/derpfi.png" alt="" preview={false} />
-                    
+                            <Logo height="55px" width="55px" src="/assets/derpfi.png" preview={false} />
+                       
                     </Link>
                 </Col>
                 <MenuCol xs={0} sm={0} md={20} style={{ height: '100%' }}>
                     <NavMenuItem style={'/funds' == router.pathname ? activeStyle : {}}>
                         <Link href="/funds">
-                           Funds
+                            Funds
                         </Link>
                     </NavMenuItem>
                     <NavMenuItem style={'/staking' == router.pathname ? activeStyle : {}}>
@@ -124,20 +125,14 @@ const Navbar: React.FC = (): React.ReactElement => {
                         </Link>
                     </NavMenuItem>
                     <NavMenuItem>
-                        <Account  />
+                        <Account/>
                     </NavMenuItem>
-                   
+                  
                 </MenuCol>
                 <NavMenuCol xs={14} sm={14} md={0} style={{ height: '100%' }}>
                     <Menu mode="horizontal" triggerSubMenuAction="click">
                         <SubMenu key="SubMenu" icon={<MenuOutlined />} title="Menu">
-                            <Menu.ItemGroup title="Bundle">
-                                <Menu.Item key="bdl">
-                                    <Link href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x7ff78e1cab9a2710eb6486ecbf3d94d125039364">
-                                      Buy BDL
-                                    </Link>
-                                </Menu.Item>
-                            </Menu.ItemGroup>
+                          
                             <Menu.ItemGroup title="Navigation">
                                 <Menu.Item key="/funds">
                                     <Link href="/funds">
@@ -149,9 +144,7 @@ const Navbar: React.FC = (): React.ReactElement => {
                                         Staking
                                     </Link>
                                 </Menu.Item>
-                                <Menu.Item key="/staking" style={'/staking' == router.pathname ? activeStyle : {}}>
-                                    
-                                </Menu.Item>
+                                
                             </Menu.ItemGroup>
                             <Menu.ItemGroup title="Wallet">
                                 <Menu.Item key="wallet">
