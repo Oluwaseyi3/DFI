@@ -1,5 +1,5 @@
 import "../styles/globals.css"
-import { Layout } from 'antd';
+import { Layout } from 'antd'
 import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import Navbar from '../components/Navbar';
