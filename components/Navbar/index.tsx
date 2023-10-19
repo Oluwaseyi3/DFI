@@ -64,14 +64,7 @@ const Navbar: React.FC = () => {
       setIsMobile(window.innerWidth < 769);
     };
   
-    window.addEventListener('resize', handleResize);
-  
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-  ;
-
+    
 
   const handleMobileMenuClick = () => {
     setMobileMenuVisible(!mobileMenuVisible);
