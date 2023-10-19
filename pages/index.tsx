@@ -269,9 +269,9 @@ export default function Home() {
                            
                                 <RewardCard
                                     image="/assets/derpfi-small.png"
-                                    imageSecondary="/assets/BNB.png"
+                                    imageSecondary="/assets/polygon-matic-logo.png"
                                     name="Derpfi"
-                                    ticker="BDL-BNB"
+                                    ticker="DFI-MATIC"
                                     // apy={bdlApy}
                                     width="100%"
                                     imgStyle={{ marginTop: '2px', marginLeft: '2px' }}
@@ -283,9 +283,9 @@ export default function Home() {
                         
                                 <RewardCard
                                     image="/assets/derpfi-small.png"
-                                    imageSecondary="/assets/BUSD.png"
+                                    imageSecondary="/assets/polygon-matic-logo.png"
                                     name="bDefi Index"
-                                    ticker="bDEFI-BNB"
+                                    ticker="bDFI-MATIC"
                                     // apy={bDEFIApy}
                                     width="100%"
                                     imgStyle={{ marginTop: '2px', marginLeft: '2px' }}
@@ -297,9 +297,9 @@ export default function Home() {
                           
                                 <RewardCard
                                     image="/assets/derpfi-small.png"
-                                    imageSecondary="/assets/BUSD.png"
+                                    imageSecondary="/assets/polygon-matic-logo.png"
                                     name="bChain Index"
-                                    ticker="bCHAIN-BNB"
+                                    ticker="bCHAIN-Matic"
                                     // apy={bCHAINApy}
                                     width="100%"
                                     imgStyle={{ marginTop: '2px', marginLeft: '2px' }}
@@ -309,16 +309,16 @@ export default function Home() {
                         </Link>
                         <Link href="/staking">
                             
-                                <RewardCard
+                                {/* <RewardCard
                                     image="/assets/BUSD.png"
-                                    imageSecondary="/assets/derpfi-small.png"
+                                    imageSecondary="/assets/polygon-matic-logo.png"
                                     name="bStable Index"
-                                    ticker="bSTBL-BNB"
+                                    ticker="bSTBL-MATIC"
                                     // apy={bSTBLApy}
                                     width="100%"
                                     imgStyle={{ marginTop: '2px', marginLeft: '2px' }}
                                     cardStyle={{ maxWidth: '550px' }}
-                                />
+                                /> */}
                           
                         </Link>
                     </LandingCol>

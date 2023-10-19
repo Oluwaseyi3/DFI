@@ -204,8 +204,8 @@ const VaultCard: React.FC<Props> = (props: Props): React.ReactElement => {
 
     
     async function handleApproveClick() {
-        const tokenAddress = '0xa1fc310115FbC3b0e72DEf432Ccb91FABF9fcb94'; // Address of the ERC20 token contract
-        const vaultAddress = '0x77E883D3010a05f931307Aedcf9fDFF742Af97E0'; // Address of the vault contract
+        const tokenAddress = '0x4987131473ccC84FEdbf22Ab383b6188D206cc9C'; // Address of the ERC20 token contract
+        const vaultAddress = '0x4987131473ccC84FEdbf22Ab383b6188D206cc9C'; // Address of the vault contract
      
     
 
@@ -233,7 +233,7 @@ const VaultCard: React.FC<Props> = (props: Props): React.ReactElement => {
 
       
   async function handleDepositClick() {
-    const vaultAddress = '0x77E883D3010a05f931307Aedcf9fDFF742Af97E0'; // Address of the vault contract
+    const vaultAddress = '0x4987131473ccC84FEdbf22Ab383b6188D206cc9C'; // Address of the vault contract
     const amount = 100; // Amount to deposit (in ether)
     const amountInWei = amount * 10**18;
 
@@ -262,7 +262,7 @@ const VaultCard: React.FC<Props> = (props: Props): React.ReactElement => {
 
       
   async function handleWithdrawClick() {
-    const vaultAddress = '0x77E883D3010a05f931307Aedcf9fDFF742Af97E0'; // Address of the vault contract
+    const vaultAddress = '0x4987131473ccC84FEdbf22Ab383b6188D206cc9C'; // Address of the vault contract
   
 
     const { request } = await prepareWriteContract({
@@ -289,7 +289,7 @@ const VaultCard: React.FC<Props> = (props: Props): React.ReactElement => {
    const [vbal, setVal] = useState(null)
 
    const { data: VaultBalance, isLoading, isError } = useContractRead({
-    address: '0x77E883D3010a05f931307Aedcf9fDFF742Af97E0',
+    address: '0x4987131473ccC84FEdbf22Ab383b6188D206cc9C',
     abi: VaultABI,
     functionName: 'getBalance',
     args: [address],
@@ -300,7 +300,7 @@ const VaultCard: React.FC<Props> = (props: Props): React.ReactElement => {
   });
 
   const { data: derphiBal } = useContractRead({
-    address: '0xa1fc310115FbC3b0e72DEf432Ccb91FABF9fcb94',
+    address: '0x4987131473ccC84FEdbf22Ab383b6188D206cc9C',
     abi: BundleTokenABI,
     functionName: 'balanceOf',
     args: [address],
